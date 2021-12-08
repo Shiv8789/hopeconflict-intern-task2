@@ -1,0 +1,94 @@
+{% extends 'app/Links.html' %}
+
+{% block content %}
+
+<div class="container ">
+
+	<br><br>
+	<div class="row">
+		<div class="col-md-9">
+			<h5 class="font-bold text-4xl">Notice:</h5>
+
+			<div class="card card-body">
+				<table class="table table-sm" class="border-separate border border-green-800  ">
+					<tr class="bg-emerald-200">
+						<th class="border border-green-600 ">Notice</th>
+						<th class="border border-green-600 ">Date</th>
+					</tr>
+					{% for n in notice %}
+					<tr>
+						<td class="border border-green-600 ">{{n.Message}} </td>
+						<td class="border border-green-600 ">{{n.date_created}} </td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+
+	<br><br>
+
+	<div class="row">
+		<div class="col-md-9">
+			<h5 class="font-bold text-4xl">Attendance:</h5>
+
+			<div class="card card-body">
+				<table class="table table-sm" class="border-separate border border-green-800  ">
+					<tr>
+						<th class="border border-green-600 ">Student Id</th>
+						<th class="border border-green-600 ">Student Name</th>
+						<th class="border border-green-600 ">Attended Lectures</th>
+						<th class="border border-green-600 ">Total Lectures</th>
+					</tr>
+					{% for a in attendance %}
+					<tr>
+						<td class="border border-green-600 ">{{a.StudentId}} </td>
+						<td class="border border-green-600 ">{{a.StudentName}} </td>
+						<td class="border border-green-600 ">{{a.LecturesAttended}} </td>
+						<td class="border border-green-600 "> {{a.TotalLectures}} </td>
+					</tr>
+					{% endfor %}
+				</table>
+			</div>
+		</div>
+	</div>
+
+
+	<br><br>
+
+	<div class="row">
+		<div class="col-md-9">
+			<h5 class="font-bold text-4xl">Marks:</h5>
+
+			<div class="card card-body">
+
+				<table class="table table-sm" class="border-separate border border-green-800  ">
+					<tr>
+						<th class="border border-green-600 ">Student Id</th>
+						<th class="border border-green-600 ">Student Name</th>
+						<th class="border border-green-600 ">Physics Marks</th>
+						<th class="border border-green-600 ">Chemistry Marks</th>
+						<th class="border border-green-600 ">Maths Marks</th>
+						<th class="border border-green-600 ">English Marks</th>
+						<th class="border border-green-600 ">Computer Marks</th>
+					</tr>
+					{% for m in marks %}
+					<tr>
+						<td class="border border-green-600 ">{{m.StudentId}} </td>
+						<td class="border border-green-600 ">{{m.StudentName}} </td>
+						<td class="border border-green-600 ">{{m.PhysicsMarks}} </td>
+						<td class="border border-green-600 ">{{m.ChemistryMarks}} </td>
+						<td class="border border-green-600 ">{{m.MathsMarks}} </td>
+						<td class="border border-green-600 ">{{m.EnglishMarks}} </td>
+						<td class="border border-green-600 ">{{m.ComputerMarks}} </td>
+					</tr>
+					{% endfor %}
+				</table>
+				<p> <b>Note:</b> Marks are out of 100</p>
+			</div>
+		</div>
+	</div>
+
+
+
+	{% endblock %}

@@ -1,0 +1,112 @@
+{% load static%}
+<html>
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Student Management System</title>
+        <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+            integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <style>
+            body {
+                font-family: 'Roboto', sans-serif;
+
+            }
+
+
+            .signupform {
+
+                max-width: 400px;
+
+                margin: auto;
+
+                padding: 9px;
+                position: absolute;
+                top: 30px;
+                left: 400px;
+                /* margin-top: 60px; */
+                border: 2px solid rgba(50, 115, 220, 0.3);
+                box-shadow: 3px 3px 7px black;
+
+            }
+
+            .loginform {
+                max-width: 400px;
+                padding: 9px;
+                transform: translateY(30px);
+                margin: auto;
+                border: 2px solid rgba(50, 115, 220, 0.3);
+                box-shadow: 3px 3px 7px black;
+            }
+
+            .signupform legend {
+                font-weight: 600;
+            }
+
+            .loginform legend {
+                font-weight: 600;
+            }
+
+            .signupsection1,
+            .loginsection1 {
+                height: 100vh;
+                background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            }
+        </style>
+
+    </head>
+
+    <body>
+
+        <section class="loginsection1">
+            <div class="loginform">
+                <form action="{% url 'login' %}" method="POST" autocomplete="off">
+                    {% csrf_token %}
+                    <fieldset>
+                        <legend class="text-center" style="font-size: 1.9rem;">
+                            Login
+                        </legend>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Username</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+                                name="loginusername" required>
+
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">Password</label>
+                            <input type="password" class="form-control" id="exampleInputPassword1" name="loginpassword"
+                                required>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary mr-3">Login</button>
+                            <a class="btn btn-outline-primary" href="{% url 'register' %}" role="button">Sign UP</a>
+                        </div>
+                    </fieldset>
+
+                </form>
+
+            </div>
+
+
+        </section>
+
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+            integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+            crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+            integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+            crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+            integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+            crossorigin="anonymous"></script>
+    </body>
+
+</html>
